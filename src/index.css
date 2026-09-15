@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --font-outfit: "Outfit", sans-serif;
+}
+
+@utility blue-gradient {
+  @apply bg-gradient-to-r from-yellow-500 via-yellow-100 to-white bg-clip-text text-transparent;
+}
+
+@utility gold-gradient {
+  @apply bg-[radial-gradient(50.42%_92.5%_at_50.42%_7.5%,#FFDFA7_0%,#E8BD70_100%)] bg-clip-text text-transparent;
+}
+
 html,
 body,
 #root {

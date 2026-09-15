@@ -1,0 +1,191 @@
+import { MailPlusIcon, Copy } from "lucide-react";
+import { useEffect, useState } from "react";
+
+export default function Navbar() {
+  const [atTop, setAtTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setAtTop(window.scrollY === 0);
+    }
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (<>
+    <header className="fixed top-0 z-50 w-full bg-transparent">
+      <nav className={`
+        fixed top-0 z-50 left-1/2 -translate-x-1/2
+        bg-transparent
+        w-fit h-15 px-5 py-10 mt-4
+        flex items-center
+        min-w-max justify-center
+      `}>
+          <a href="#">
+            <img src="/img/anadolu_white_notext_tight.png" className="size-12" />
+          </a>
+
+          <nav className={`
+            font-outfit flex gap-4 px-5 py-1.5 rounded-xl
+
+            transition duration-300
+            ${atTop
+              ? "bg-transparent border-transparent mx-5"
+              : "bg-[#151515]/80 backdrop-blur-lg border rounded-xl border-white/10 mx-4.75"
+            }
+          `}>
+            <a href="#" className="
+              text-[#E8BD70]
+              text-xl
+              transition duration-200
+              hover:scale-105
+              hover:-translate-y-1
+              hover:text-[#E8BD70]
+            ">
+              Home
+            </a>
+            <a href="#" className="
+              transition duration-200
+              text-xl
+              hover:scale-105
+              hover:-translate-y-1
+              hover:text-[#E8BD70]
+            ">
+              About
+            </a>
+            <a href="#" className="
+              transition duration-200
+              text-xl
+              hover:scale-105
+              hover:-translate-y-1
+              hover:text-[#E8BD70]
+            ">
+              Work
+            </a>
+            <button commandFor="my-dialog" command="show-modal" className="
+              transition duration-200
+              text-xl cursor-pointer
+              hover:scale-105
+              hover:-translate-y-1
+              hover:text-[#E8BD70]
+            ">
+              Contact
+            </button>
+          </nav>
+
+          <EmailButton/>
+      </nav>
+    </header>
+
+    <dialog id="my-dialog">
+      <p>Hello</p>
+
+      <button
+        command="close"
+        commandFor="my-dialog"
+      >
+        Close
+      </button>|
+    </dialog>
+  </>)
+}
+
+function EmailButton() {
+  const email = "contact@drizzy.no";
+
+  const [mouse, setMouse] = useState({
+    x: 0,
+    y: 0,
+  });
+
+  const [hovering, setHovering] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  async function copyEmail() {
+    await navigator.clipboard.writeText(email);
+
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 1500);
+  }
+
+  function handleMouseMove(
+    e: React.MouseEvent<HTMLButtonElement>
+  ) {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    setMouse({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  }
+
+  return (<>
+    <div className="relative flex items-center">
+      <button
+        onClick={copyEmail}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setHovering(true)}
+        onMouseLeave={() => setHovering(false)}
+        className="group relative h-10 w-10 cursor-pointer"
+      >
+        <div className="
+          absolute left-0 top-0
+          h-10 w-10
+          rounded-lg border border-[#403f3e]
+          bg-[#202020] shrink-0 whitespace-nowrap
+          transition-[width] duration-300 ease-in-out
+          group-hover:w-[215px]
+        ">
+          <MailPlusIcon size={18} className="absolute left-2.5 top-1/2 -translate-y-1/2 group-hover:text-[#E8BD70]" />
+
+          <span className="
+            absolute left-10 top-1/2 opacity-0 pointer-events-none
+            -translate-y-1/2 whitespace-nowrap
+            transition-opacity duration-200
+            group-hover:opacity-100 font-outfit
+          ">
+            {email}
+          </span>
+
+          <Copy size={18} className="
+            absolute left-46 top-1/2 opacity-0 pointer-events-none
+            -translate-y-1/2 whitespace-nowrap
+            transition-opacity duration-200
+            group-hover:opacity-100 text-[#E8BD70]
+          "/>
+
+          {hovering && (
+            <div
+              className="
+                pointer-events-none 
+                absolute shrink-0 whitespace-nowrap
+                rounded-lg
+                bg-[#2b2b2b]
+                px-3 py-2
+                text-sm
+                text-white
+                shadow-lg
+              "
+              style={{
+                left: mouse.x,
+                top: mouse.y,
+                transform: "translate(12px, 12px)",
+              }}
+            >
+              {copied ? "Copied!" : "Copy email"}
+            </div>
+          )}
+        </div>
+      </button>
+    </div>
+  </>);
+}
