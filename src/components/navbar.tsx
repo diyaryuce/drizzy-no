@@ -7,7 +7,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setAtTop(window.scrollY === 0);
-    }
+    };
 
     handleScroll();
 
@@ -18,104 +18,138 @@ export default function Navbar() {
     };
   }, []);
 
-  return (<>
-    <header className="fixed top-0 z-50 w-full bg-transparent">
-      <nav className={`
-        fixed top-0 z-50 left-1/2 -translate-x-1/2
-        bg-transparent
-        w-fit h-15 px-5 py-10 mt-4
-        flex items-center
-        min-w-max justify-center
-      `}>
-          <a href="#hero"
+  return (
+    <>
+      <header className="fixed top-0 z-50 w-full bg-transparent">
+        <nav
+          className="
+            fixed top-0 left-1/2 z-50
+            -translate-x-1/2
+            mt-3 sm:mt-4
+            flex items-center justify-center
+            w-[95%] sm:w-fit
+            px-2 sm:px-5
+            py-3 sm:py-5
+            bg-transparent
+          "
+        >
+          <a
+            href="#hero"
+            className="shrink-0"
             onClick={(e) => {
               e.preventDefault();
 
               document.getElementById("hero")?.scrollIntoView({
                 behavior: "smooth",
               });
-            }}>
-            <img src="/img/anadolu_white_notext_tight.png" className="size-12" />
+            }}
+          >
+            <img
+              src="/img/anadolu_gold.png"
+              className="size-9 lg:size-15"
+            />
           </a>
 
-          <nav className={`
-            font-outfit flex gap-4 px-5 py-1.5 rounded-xl
+          <nav
+            className={`
+              font-outfit
+              flex items-center
+              gap-2 sm:gap-4
+              px-3 sm:px-4
+              py-2
+              rounded-xl
+              transition duration-300
 
-            transition duration-300
-            ${atTop
-              ? "bg-transparent border-transparent mx-5"
-              : "bg-[#151515]/80 backdrop-blur-lg border rounded-xl border-white/10 mx-4.75"
-            }
-          `}>
-            <a href="#hero" 
-               onClick={(e) => {
-                  e.preventDefault();
+              ${
+                atTop
+                  ? "bg-transparent border-transparent mx-3 sm:mx-5"
+                  : "bg-[#151515]/80 backdrop-blur-lg border rounded-xl border-white/10 mx-2.75 sm:mx-4.75"
+              }
+            `}
+          >
+            <a
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault();
 
-                  document.getElementById("hero")?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }} 
-               className="
+                document.getElementById("hero")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              className="
+                text-sm sm:text-xl
                 transition duration-200
-                text-xl
                 hover:scale-105
                 hover:-translate-y-1
                 hover:text-[#E8BD70]
-            ">
+              "
+            >
               Home
             </a>
 
-            <a href="#services" 
-               onClick={(e) => {
-                  e.preventDefault();
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
 
-                  document.getElementById("services")?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }} 
-               className="
+                document.getElementById("services")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              className="
+                text-sm sm:text-xl
                 transition duration-200
-                text-xl
                 hover:scale-105
                 hover:-translate-y-1
                 hover:text-[#E8BD70]
-            ">
+              "
+            >
               Services
             </a>
 
-            <a href="#about" 
-               onClick={(e) => {
-                  e.preventDefault();
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
 
-                  document.getElementById("about")?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }} 
-               className="
+                document.getElementById("about")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              className="
+                text-sm sm:text-xl
                 transition duration-200
-                text-xl
                 hover:scale-105
                 hover:-translate-y-1
                 hover:text-[#E8BD70]
-            ">
+              "
+            >
               About
             </a>
 
-            <button commandFor="contact-dialog" command="show-modal" className="
-              transition duration-200
-              text-xl cursor-pointer
-              hover:scale-105
-              hover:-translate-y-1
-              hover:text-[#E8BD70]
-            ">
+            <button
+              commandFor="contact-dialog"
+              command="show-modal"
+              className="
+                text-sm sm:text-xl
+                cursor-pointer
+                transition duration-200
+                hover:scale-105
+                hover:-translate-y-1
+                hover:text-[#E8BD70]
+              "
+            >
               Contact
             </button>
           </nav>
 
-          <EmailButton/>
-      </nav>
-    </header>
-  </>)
+          <div className="hidden sm:block">
+            <EmailButton />
+          </div>
+        </nav>
+      </header>
+    </>
+  );
 }
 
 function EmailButton() {
@@ -150,46 +184,81 @@ function EmailButton() {
     });
   }
 
-  return (<>
+  return (
     <div className="relative flex items-center">
       <button
         onClick={copyEmail}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
-        className="group relative h-10 w-10 cursor-pointer"
-      >
-        <div className="
-          absolute left-0 top-0
+        className="
+          group relative
           h-10 w-10
-          rounded-lg border border-[#403f3e]
-          bg-[#202020] shrink-0 whitespace-nowrap
-          transition-[width] duration-300 ease-in-out
-          group-hover:w-[245px]
-        ">
-          <MailPlusIcon size={18} className="absolute left-2.5 top-1/2 -translate-y-1/2 group-hover:text-[#E8BD70]" />
+          cursor-pointer
+        "
+      >
+        <div
+          className="
+            absolute left-0 top-0
+            h-10 w-10
+            rounded-lg
+            border border-[#403f3e]
+            bg-[#202020]
+            shrink-0
+            whitespace-nowrap
+            transition-[width]
+            duration-300
+            ease-in-out
+            group-hover:w-[245px]
+          "
+        >
+          <MailPlusIcon
+            size={18}
+            className="
+              absolute left-2.5 top-1/2
+              -translate-y-1/2
+              group-hover:text-[#E8BD70]
+            "
+          />
 
-          <span className="
-            absolute left-10 top-1/2 opacity-0 pointer-events-none
-            -translate-y-1/2 whitespace-nowrap
-            transition-opacity duration-200
-            group-hover:opacity-100 font-outfit
-          ">
+          <span
+            className="
+              pointer-events-none
+              absolute left-10 top-1/2
+              -translate-y-1/2
+              whitespace-nowrap
+              opacity-0
+              transition-opacity
+              duration-200
+              group-hover:opacity-100
+              font-outfit
+            "
+          >
             {email}
           </span>
 
-          <Copy size={18} className="
-            absolute left-53.5 top-1/2 opacity-0 pointer-events-none
-            -translate-y-1/2 whitespace-nowrap
-            transition-opacity duration-200
-            group-hover:opacity-100 text-[#E8BD70]
-          "/>
+          <Copy
+            size={18}
+            className="
+              pointer-events-none
+              absolute left-53.5 top-1/2
+              -translate-y-1/2
+              whitespace-nowrap
+              opacity-0
+              transition-opacity
+              duration-200
+              group-hover:opacity-100
+              text-[#E8BD70]
+            "
+          />
 
           {hovering && (
             <div
               className="
-                pointer-events-none 
-                absolute shrink-0 whitespace-nowrap
+                pointer-events-none
+                absolute
+                shrink-0
+                whitespace-nowrap
                 rounded-lg
                 bg-[#2b2b2b]
                 px-3 py-2
@@ -209,5 +278,5 @@ function EmailButton() {
         </div>
       </button>
     </div>
-  </>);
+  );
 }

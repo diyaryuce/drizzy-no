@@ -1,16 +1,22 @@
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, X } from "lucide-react";
 
 export default function ContactDialog() {
   return (
     <dialog id="contact-dialog" className="
       rounded-xl bg-[#202020]/95 border-2 border-[#202020] p-8 font-outfit 
-      mx-auto my-auto items-start w-120 relative
+      mx-auto my-auto items-start w-120 fixed
     ">
       <div className="flex flex-col items-start">
         <h1 className="text-4xl gold-gradient font-bold">Get in touch</h1>
-        <p className="mt-2 text-base max-w-lg">Do you have a project in mind? Get in touch, and we'll find the solution together.</p>
+        <p className="mt-2 text-base max-w-2xl">Do you have a project in mind? Get in touch, and we'll find the solution together.</p>
 
-        <button command="close" commandFor="contact-dialog" className="absolute right-5.5 cursor-pointer">X</button>
+        <button command="close" commandFor="contact-dialog" className="
+          text-2xl absolute top-9 right-8 cursor-pointer hover:scale-[1.01] 
+          hover:-translate-y-1 transition duration-200
+          hover:text-[#E8BD70] text-[#b2b2a8]
+        ">
+          <X />
+        </button>
 
         <form className="flex flex-col gap-4 mt-4 w-full">
 
