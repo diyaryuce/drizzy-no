@@ -23,3 +23,50 @@ body,
 html {
   scroll-behavior: smooth;
 }
+
+dialog {
+  opacity: 0;
+  transform: scale(0.96) translateY(10px);
+
+  transition:
+    opacity 200ms ease-in-out,
+    transform 200ms ease-in-out,
+    overlay 200ms allow-discrete,
+    display 200ms allow-discrete;
+}
+
+dialog[open] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  scroll-behavior: unset;
+}
+
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0);
+
+  transition:
+    background 200ms ease-in-out,
+    overlay 200ms allow-discrete,
+    display 200ms allow-discrete;
+}
+
+dialog[open]::backdrop {
+  background: rgb(0 0 0 / 0.6);
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    background: rgb(0 0 0 / 0);
+  }
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}

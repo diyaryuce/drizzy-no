@@ -23,7 +23,7 @@ export default function Mainsite() {
             <p className="text-2xl mt-4 font-semibold flex max-w-2xl">Developer and data engineering student focused on modern web experiences and software development.</p>
           
             <div className="flex mt-10 gap-10">
-              <button className="
+              <button commandFor="contact-dialog" command="show-modal" className="
                 flex cursor-pointer justify-center items-center rounded-xl w-55 h-10.5 px-6 py-7 gap-3 group
                 bg-[radial-gradient(50.42%_92.5%_at_50.42%_7.5%,#FFDFA7_0%,#E8BD70_100%)]
               ">
@@ -36,14 +36,21 @@ export default function Mainsite() {
                 <ArrowRightIcon size={22} className="text-[#151515] group-hover:translate-x-2 transition duration-200" />
               </button>
 
-              <button className="flex cursor-pointer group items-center">
+              <a href="#about" className="flex group items-center"
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  document.getElementById("about")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}>
                 <span className="
                   text-lg group-hover:scale-101 group-hover:-translate-y-1 transition duration-200
                   group-hover:text-[#E8BD70]
                 ">
                   More about me
                 </span>
-              </button>
+              </a>
             </div>
 
           </div>

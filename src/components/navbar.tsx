@@ -27,7 +27,14 @@ export default function Navbar() {
         flex items-center
         min-w-max justify-center
       `}>
-          <a href="#">
+          <a href="#hero"
+            onClick={(e) => {
+              e.preventDefault();
+
+              document.getElementById("hero")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}>
             <img src="/img/anadolu_white_notext_tight.png" className="size-12" />
           </a>
 
@@ -57,6 +64,7 @@ export default function Navbar() {
             ">
               Home
             </a>
+
             <a href="#services" 
                onClick={(e) => {
                   e.preventDefault();
@@ -74,6 +82,7 @@ export default function Navbar() {
             ">
               Services
             </a>
+
             <a href="#about" 
                onClick={(e) => {
                   e.preventDefault();
@@ -91,7 +100,8 @@ export default function Navbar() {
             ">
               About
             </a>
-            <button commandFor="my-dialog" command="show-modal" className="
+
+            <button commandFor="contact-dialog" command="show-modal" className="
               transition duration-200
               text-xl cursor-pointer
               hover:scale-105
@@ -105,17 +115,6 @@ export default function Navbar() {
           <EmailButton/>
       </nav>
     </header>
-
-    <dialog id="my-dialog">
-      <p>Hello</p>
-
-      <button
-        command="close"
-        commandFor="my-dialog"
-      >
-        Close
-      </button>|
-    </dialog>
   </>)
 }
 

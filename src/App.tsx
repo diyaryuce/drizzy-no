@@ -1,6 +1,7 @@
 import Navbar from "./components/navbar"
 import Mainsite from "./components/mainsite"
 import Footer from "./components/footer"
+import ContactDialog from "./components/contactDialog"
 
 export default function App() {
   return(<>
@@ -8,6 +9,8 @@ export default function App() {
       <Navbar />
       <Mainsite />
       <Footer />
+
+      <ContactDialog />
     </div>
   </>)
 }
