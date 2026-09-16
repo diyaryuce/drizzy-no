@@ -1,11 +1,13 @@
 import Navbar from "./components/navbar"
 import Mainsite from "./components/mainsite"
+import Footer from "./components/footer"
 
 export default function App() {
   return(<>
-    <div className="min-h-[125rem]">
+    <div>
       <Navbar />
       <Mainsite />
+      <Footer />
     </div>
   </>)
 }

@@ -40,33 +40,56 @@ export default function Navbar() {
               : "bg-[#151515]/80 backdrop-blur-lg border rounded-xl border-white/10 mx-4.75"
             }
           `}>
-            <a href="#" className="
-              text-[#E8BD70]
-              text-xl
-              transition duration-200
-              hover:scale-105
-              hover:-translate-y-1
-              hover:text-[#E8BD70]
+            <a href="#hero" 
+               onClick={(e) => {
+                  e.preventDefault();
+
+                  document.getElementById("hero")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }} 
+               className="
+                transition duration-200
+                text-xl
+                hover:scale-105
+                hover:-translate-y-1
+                hover:text-[#E8BD70]
             ">
               Home
             </a>
-            <a href="#" className="
-              transition duration-200
-              text-xl
-              hover:scale-105
-              hover:-translate-y-1
-              hover:text-[#E8BD70]
+            <a href="#services" 
+               onClick={(e) => {
+                  e.preventDefault();
+
+                  document.getElementById("services")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }} 
+               className="
+                transition duration-200
+                text-xl
+                hover:scale-105
+                hover:-translate-y-1
+                hover:text-[#E8BD70]
+            ">
+              Services
+            </a>
+            <a href="#about" 
+               onClick={(e) => {
+                  e.preventDefault();
+
+                  document.getElementById("about")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }} 
+               className="
+                transition duration-200
+                text-xl
+                hover:scale-105
+                hover:-translate-y-1
+                hover:text-[#E8BD70]
             ">
               About
-            </a>
-            <a href="#" className="
-              transition duration-200
-              text-xl
-              hover:scale-105
-              hover:-translate-y-1
-              hover:text-[#E8BD70]
-            ">
-              Work
             </a>
             <button commandFor="my-dialog" command="show-modal" className="
               transition duration-200
@@ -97,7 +120,7 @@ export default function Navbar() {
 }
 
 function EmailButton() {
-  const email = "contact@drizzy.no";
+  const email = "yucecontact@gmail.no";
 
   const [mouse, setMouse] = useState({
     x: 0,
@@ -143,7 +166,7 @@ function EmailButton() {
           rounded-lg border border-[#403f3e]
           bg-[#202020] shrink-0 whitespace-nowrap
           transition-[width] duration-300 ease-in-out
-          group-hover:w-[215px]
+          group-hover:w-[245px]
         ">
           <MailPlusIcon size={18} className="absolute left-2.5 top-1/2 -translate-y-1/2 group-hover:text-[#E8BD70]" />
 
@@ -157,7 +180,7 @@ function EmailButton() {
           </span>
 
           <Copy size={18} className="
-            absolute left-46 top-1/2 opacity-0 pointer-events-none
+            absolute left-53.5 top-1/2 opacity-0 pointer-events-none
             -translate-y-1/2 whitespace-nowrap
             transition-opacity duration-200
             group-hover:opacity-100 text-[#E8BD70]
