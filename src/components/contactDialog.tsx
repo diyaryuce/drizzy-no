@@ -56,7 +56,7 @@ export default function ContactDialog() {
             <span>Message</span>
             <textarea
               name="message"
-              placeholder="Writte your message..."
+              placeholder="Write your message..."
               className="rounded-lg border border-[#404040] p-3"
             />
           </div>
@@ -64,8 +64,6 @@ export default function ContactDialog() {
           <div className="flex items-center gap-6 mt-2">
             <button
               type="submit"
-              command="close"
-              commandFor="contact-dialog"
               className="
               flex cursor-pointer justify-center items-center rounded-xl w-35 h-10.5 px-5 py-6 gap-3 group
               bg-[radial-gradient(50.42%_92.5%_at_50.42%_7.5%,#FFDFA7_0%,#E8BD70_100%)]
@@ -119,7 +117,9 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/api/contact", {
+    const API_URL = import.meta.env.VITE_API_URL;
+
+    const response = await fetch(`${API_URL}/api/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -127,9 +127,19 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
       body: JSON.stringify(data),
     });
 
+    if (!response.ok) {
+      throw new Error("Failed to send message");
+    }
+
     const result = await response.json();
 
     console.log(result);
+
+    const dialog = document.getElementById(
+      "contact-dialog",
+    ) as HTMLDialogElement;
+
+    dialog.close();
   } catch (error) {
     console.error("Something went wrong:", error);
   }

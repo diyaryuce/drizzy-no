@@ -131,7 +131,7 @@ export default function Mainsite() {
 
                 <a
                   href="#about"
-                  className="group flex items-center"
+                  className="group flex items-center gap-3"
                   onClick={(e) => {
                     e.preventDefault();
 
@@ -151,7 +151,19 @@ export default function Mainsite() {
                   >
                     More about me
                   </span>
+
+                  <ArrowRightIcon
+                    size={18}
+                    className="
+                      sm:hidden block 
+                    "
+                  />
                 </a>
+              </div>
+
+              <div className="flex flex-col mt-8">
+                <h2>Brought to you by:</h2>
+                <h3>Ayaz Diyar 'drizzy' Yüce</h3>
               </div>
             </div>
           </Reveal>

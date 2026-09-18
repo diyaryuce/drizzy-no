@@ -44,10 +44,7 @@ export default function Navbar() {
               });
             }}
           >
-            <img
-              src="/img/anadolu_gold.png"
-              className="size-9 lg:size-15"
-            />
+            <img src="/img/anadolu_gold.png" className="size-9 lg:size-15" />
           </a>
 
           <nav
@@ -153,7 +150,7 @@ export default function Navbar() {
 }
 
 function EmailButton() {
-  const email = "yucecontact@gmail.no";
+  const email = "yucecontact@gmail.com";
 
   const [mouse, setMouse] = useState({
     x: 0,
@@ -173,9 +170,7 @@ function EmailButton() {
     }, 1500);
   }
 
-  function handleMouseMove(
-    e: React.MouseEvent<HTMLButtonElement>
-  ) {
+  function handleMouseMove(e: React.MouseEvent<HTMLButtonElement>) {
     const rect = e.currentTarget.getBoundingClientRect();
 
     setMouse({
@@ -209,7 +204,7 @@ function EmailButton() {
             transition-[width]
             duration-300
             ease-in-out
-            group-hover:w-[245px]
+            group-hover:w-[255px]
           "
         >
           <MailPlusIcon
@@ -241,7 +236,7 @@ function EmailButton() {
             size={18}
             className="
               pointer-events-none
-              absolute left-53.5 top-1/2
+              absolute left-55.5 top-1/2
               -translate-y-1/2
               whitespace-nowrap
               opacity-0

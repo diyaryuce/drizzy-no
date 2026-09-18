@@ -1,28 +1,19 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { Resend } from "resend";
 
 dotenv.config();
 
 const app = express();
-
 const PORT = process.env.PORT || 3000;
 
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-  }),
-);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
+app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.json({
-    message: "yucecode.no backend is running",
-  });
-});
-
-app.post("/api/contact", (req, res) => {
+app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
@@ -32,19 +23,46 @@ app.post("/api/contact", (req, res) => {
     });
   }
 
-  console.log("New contact message:");
-  console.log({
-    name,
-    email,
-    message,
-  });
+  try {
+    const { data, error } = await resend.emails.send({
+      from: "Portfolio <onboarding@resend.dev>",
+      to: process.env.CONTACT_EMAIL,
+      subject: `New portfolio message from ${name}`,
+      replyTo: email,
+      text: `
+Name: ${name}
+Email: ${email}
 
-  return res.status(200).json({
-    success: true,
-    message: "Message received",
-  });
+Message:
+${message}
+      `,
+    });
+
+    if (error) {
+      console.error(error);
+
+      return res.status(500).json({
+        success: false,
+        message: "Failed to send email",
+      });
+    }
+
+    console.log("Email sent:", data);
+
+    return res.status(200).json({
+      success: true,
+      message: "Message sent successfully",
+    });
+  } catch (error) {
+    console.error(error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+    });
+  }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
