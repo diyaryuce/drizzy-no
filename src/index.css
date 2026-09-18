@@ -1,9 +1,82 @@
 @import "tailwindcss";
 
+@theme {
+  --font-outfit: "Outfit", sans-serif;
+}
+
+@utility blue-gradient {
+  @apply bg-gradient-to-r from-yellow-500 via-yellow-100 to-white bg-clip-text text-transparent;
+}
+
+@utility gold-gradient {
+  @apply bg-[radial-gradient(50.42%_92.5%_at_50.42%_7.5%,#FFDFA7_0%,#E8BD70_100%)] bg-clip-text text-transparent;
+}
+
 html,
 body,
 #root {
   margin: 0;
   min-height: 100%;
   background-color: #151515;
+  width: 100%;
+  min-width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+dialog {
+  opacity: 0;
+  transform: scale(0.96) translateY(10px);
+
+  transition:
+    opacity 200ms ease-in-out,
+    transform 200ms ease-in-out,
+    overlay 200ms allow-discrete,
+    display 200ms allow-discrete;
+}
+
+dialog[open] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  scroll-behavior: unset;
+}
+
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0);
+
+  transition:
+    background 200ms ease-in-out,
+    overlay 200ms allow-discrete,
+    display 200ms allow-discrete;
+}
+
+dialog[open]::backdrop {
+  background: rgb(0 0 0 / 0.6);
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    background: rgb(0 0 0 / 0);
+  }
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
 }
