@@ -22,57 +22,57 @@ export default function Footer() {
           lg:px-20
         "
       >
-        <div className="
+        <div
+          className="
           flex flex-col
           gap-5
           justify-center
           items-center
           text-center
-        ">
+        "
+        >
           <img
             src="/img/anadolu_white_notext_tight.png"
             className="size-10 sm:size-12"
           />
 
           <p className="text-xs sm:text-sm">
-            © 2026 drizzy.no. All rights reserved.
+            © 2026 yucecode.no. All rights reserved.
           </p>
         </div>
 
-        <div className="
+        <div
+          className="
           flex flex-col
           gap-3
           items-center
           lg:items-start
-        ">
-          <h1 className="text-xl sm:text-2xl">
-            Contact
-          </h1>
+        "
+        >
+          <h1 className="text-xl sm:text-2xl">Contact</h1>
 
-          <div className="
+          <div
+            className="
             flex items-center
             gap-3
             min-w-0
-          ">
-            <MailIcon
-              size={21}
-              className="shrink-0 text-[#b2b2a8]"
-            />
+          "
+          >
+            <MailIcon size={21} className="shrink-0 text-[#b2b2a8]" />
 
-            <span className="
+            <span
+              className="
               text-sm sm:text-base
               text-[#b2b2a8]
               break-all
-            ">
+            "
+            >
               yucecontact@gmail.com
             </span>
           </div>
 
           <div className="flex items-center gap-3">
-            <Phone
-              size={21}
-              className="shrink-0 text-[#b2b2a8]"
-            />
+            <Phone size={21} className="shrink-0 text-[#b2b2a8]" />
 
             <span className="text-sm sm:text-base text-[#b2b2a8]">
               +47 69 69 69 69
@@ -149,10 +149,7 @@ export default function Footer() {
                 hover:scale-[1.05]
               "
             >
-              <img
-                src="/img/x.png"
-                className="size-5"
-              />
+              <img src="/img/x.png" className="size-5" />
             </a>
 
             <a

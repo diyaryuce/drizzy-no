@@ -11,8 +11,6 @@ export default function Mainsite() {
   return (
     <>
       <main className="relative flex flex-col justify-center overflow-hidden font-outfit">
-
-        {/* HERO */}
         <section
           id="hero"
           className="
@@ -61,7 +59,10 @@ export default function Mainsite() {
               </h2>
 
               <div className="flex items-center gap-5">
-                <img src="/img/anadolu_gold.png" className="size-12 lg:size-16" />
+                <img
+                  src="/img/anadolu_gold.png"
+                  className="size-12 lg:size-16"
+                />
 
                 <h1
                   className="
@@ -72,7 +73,7 @@ export default function Mainsite() {
                     lg:text-6xl
                   "
                 >
-                  drizzy.no
+                  yucecode.no
                 </h1>
               </div>
 
@@ -83,7 +84,7 @@ export default function Mainsite() {
                   font-semibold
                 "
               >
-                I develop modern digital experiences that combine clean design, 
+                I develop modern digital experiences that combine clean design,
                 solid engineering, and intuitive user interaction.
               </p>
 
@@ -163,7 +164,6 @@ export default function Mainsite() {
           />
         </section>
 
-        {/* SERVICES */}
         <section
           id="services"
           className="
@@ -204,9 +204,7 @@ export default function Mainsite() {
                   ml-0 lg:ml-10
                 "
               >
-                <h1 className="text-3xl font-bold sm:text-4xl">
-                  Frontend
-                </h1>
+                <h1 className="text-3xl font-bold sm:text-4xl">Frontend</h1>
 
                 <p
                   className="
@@ -229,11 +227,7 @@ export default function Mainsite() {
                 </h2>
 
                 <div className="mt-4 flex max-w-3xl flex-wrap gap-3">
-                  <Tech
-                    image="/img/react.png"
-                    name="React"
-                    role="specialize"
-                  />
+                  <Tech image="/img/react.png" name="React" role="specialize" />
 
                   <Tech
                     image="/img/javascript.png"
@@ -247,23 +241,11 @@ export default function Mainsite() {
                     role="specialize"
                   />
 
-                  <Tech
-                    image="/img/typescript.png"
-                    name="TypeScript"
-                    role=""
-                  />
+                  <Tech image="/img/typescript.png" name="TypeScript" role="" />
 
-                  <Tech
-                    image="/img/html.png"
-                    name="HTML"
-                    role=""
-                  />
+                  <Tech image="/img/html.png" name="HTML" role="" />
 
-                  <Tech
-                    image="/img/css.png"
-                    name="CSS"
-                    role=""
-                  />
+                  <Tech image="/img/css.png" name="CSS" role="" />
                 </div>
 
                 <p className="mt-8 text-sm text-[#858281] sm:text-base">
@@ -283,7 +265,6 @@ export default function Mainsite() {
               "
             />
 
-            {/* BACKEND */}
             <div
               className="
                 mt-10 flex min-w-0
@@ -294,14 +275,8 @@ export default function Mainsite() {
             >
               <img
                 src="/img/backend.png"
-                className="
-                  h-auto w-full
-                  rounded-xl
-                  lg:w-180
-                  shrink-0
-                "
+                className="h-auto w-full rounded-xl lg:w-180 shrink-0"
               />
-
               <div className="min-w-0">
                 <h1 className="text-3xl font-bold sm:text-4xl">
                   Backend + Database
@@ -315,13 +290,13 @@ export default function Mainsite() {
                     text-[#9f9fa8]
                   "
                 >
-                  Backend is the foundation that powers a digital product
-                  behind the scenes. I build reliable server-side systems and
-                  database solutions that handle data, business logic,
-                  authentication, and application functionality efficiently. My
-                  focus is on creating secure, scalable, and maintainable
-                  architectures that keep applications running smoothly and
-                  provide a solid foundation for the user experience.
+                  Backend is the foundation that powers a digital product behind
+                  the scenes. I build reliable server-side systems and database
+                  solutions that handle data, business logic, authentication,
+                  and application functionality efficiently. My focus is on
+                  creating secure, scalable, and maintainable architectures that
+                  keep applications running smoothly and provide a solid
+                  foundation for the user experience.
                 </p>
 
                 <h2 className="mt-10 text-xl font-bold sm:text-2xl lg:mt-12">
@@ -329,11 +304,7 @@ export default function Mainsite() {
                 </h2>
 
                 <div className="mt-4 flex max-w-2xl flex-wrap gap-3">
-                  <Tech
-                    image="/img/java.png"
-                    name="Java"
-                    role="specialize"
-                  />
+                  <Tech image="/img/java.png" name="Java" role="specialize" />
 
                   <Tech
                     image="/img/nodejs.png"
@@ -347,17 +318,9 @@ export default function Mainsite() {
                     role="specialize"
                   />
 
-                  <Tech
-                    image="/img/spring.png"
-                    name="Spring Boot"
-                    role=""
-                  />
+                  <Tech image="/img/spring.png" name="Spring Boot" role="" />
 
-                  <Tech
-                    image="/img/mysql.png"
-                    name="Mysql"
-                    role=""
-                  />
+                  <Tech image="/img/mysql.png" name="Mysql" role="" />
                 </div>
 
                 <p className="mt-8 text-sm text-[#858281] sm:text-base">
@@ -368,7 +331,6 @@ export default function Mainsite() {
           </Reveal>
         </section>
 
-        {/* ABOUT */}
         <section
           id="about"
           className="
@@ -393,9 +355,7 @@ export default function Mainsite() {
               "
             >
               <div className="mt-0 min-w-0 lg:mt-20">
-                <h1 className="mb-5 text-3xl">
-                  Who am i?
-                </h1>
+                <h1 className="mb-5 text-3xl">Who am i?</h1>
 
                 <p
                   className="
@@ -482,9 +442,7 @@ export default function Mainsite() {
                   </div>
 
                   <div className="flex gap-3">
-                    <ChartNoAxesColumnIncreasing
-                      className="mt-1 shrink-0 text-[#E8BD70]"
-                    />
+                    <ChartNoAxesColumnIncreasing className="mt-1 shrink-0 text-[#E8BD70]" />
 
                     <div>
                       <h2 className="text-sm tracking-[0.15em] text-[#E8BD70]">
@@ -533,7 +491,6 @@ export default function Mainsite() {
                 </button>
               </div>
 
-              {/* PORTRAIT */}
               <div
                 className="
                   relative
@@ -598,21 +555,14 @@ function Tech({ image, name, role }: Props) {
         ${roleColour}
       `}
     >
-      <img
-        src={image}
-        className="h-auto w-5"
-      />
+      <img src={image} className="h-auto w-5" />
 
       <span>{name}</span>
     </div>
   );
 }
 
-function Reveal({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function Reveal({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(false);
 
@@ -644,11 +594,7 @@ function Reveal({
         w-full min-w-0
         transition-[opacity,transform]
         duration-600 ease-[ease]
-        ${
-          active
-            ? "translate-y-0 opacity-100"
-            : "translate-y-[50px] opacity-0"
-        }
+        ${active ? "translate-y-0 opacity-100" : "translate-y-[50px] opacity-0"}
       `}
     >
       {children}
