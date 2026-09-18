@@ -44,7 +44,7 @@ export default function Navbar() {
               });
             }}
           >
-            <img src="/img/anadolu_gold.png" className="size-9 lg:size-15" />
+            <img src="/img/anadolu_gold.png" className="size-7 lg:size-12" />
           </a>
 
           <nav

@@ -31,10 +31,7 @@ export default function Footer() {
           text-center
         "
         >
-          <img
-            src="/img/anadolu_white_notext_tight.png"
-            className="size-10 sm:size-12"
-          />
+          <img src="/img/anadolu_gold.png" className="size-10 sm:size-12" />
 
           <p className="text-xs sm:text-sm">
             © 2026 yucecode.no. All rights reserved.
@@ -49,8 +46,6 @@ export default function Footer() {
           lg:items-start
         "
         >
-          <h1 className="text-xl sm:text-2xl">Contact</h1>
-
           <div
             className="
             flex items-center

@@ -15,22 +15,11 @@ export default function Mainsite() {
           id="hero"
           className="
             relative flex min-h-screen flex-col
-            items-start justify-center
-            overflow-hidden
+            items-center justify-center
+            overflow-hidden w-full
             px-5 sm:px-8 lg:px-10
           "
         >
-          <img
-            src="/img/bg.png"
-            className="
-              absolute right-0 top-0 z-0
-              h-full
-              w-full lg:w-[85%]
-              object-cover
-              object-[65%_center] lg:object-[70%_center]
-            "
-          />
-
           <div
             className="
               absolute inset-0 z-10
@@ -49,37 +38,27 @@ export default function Mainsite() {
             <div
               className="
                 relative z-20
-                ml-0 lg:ml-10
-                flex max-w-xl flex-col
-                items-start justify-center
+                flex max-w-xl flex-col mx-auto
+                items-center justify-center
               "
             >
-              <h2 className="mb-2 text-lg sm:text-xl lg:text-2xl">
-                Welcome to
-              </h2>
+              <h2 className="mb-2 text-lg sm:text-xl lg:text-2xl">Hi, im</h2>
 
-              <div className="flex items-center gap-5">
-                <img
-                  src="/img/anadolu_gold.png"
-                  className="size-12 lg:size-16"
-                />
-
-                <h1
-                  className="
-                    gold-gradient
-                    text-[clamp(2.5rem,10vw,3.75rem)]
-                    font-bold
-                    leading-tight
-                    lg:text-6xl
-                  "
-                >
-                  yucecode.no
-                </h1>
-              </div>
+              <h1
+                className="
+                  gold-gradient
+                  text-[clamp(2.5rem,10vw,3.75rem)]
+                  font-bold
+                  leading-tight
+                  lg:text-6xl
+                "
+              >
+                A. Diyar Yüce
+              </h1>
 
               <p
                 className="
-                  mt-4 max-w-sm lg:max-w-2xl
+                  mt-4 text-center
                   text-lg sm:text-xl lg:text-2xl
                   font-semibold
                 "
@@ -160,11 +139,6 @@ export default function Mainsite() {
                   />
                 </a>
               </div>
-
-              <div className="flex flex-col mt-8">
-                <h2>Brought to you by:</h2>
-                <h3>Ayaz Diyar 'drizzy' Yüce</h3>
-              </div>
             </div>
           </Reveal>
 
@@ -191,7 +165,6 @@ export default function Mainsite() {
               SERVICES
             </h1>
 
-            {/* FRONTEND */}
             <div
               className="
                 flex min-w-0
@@ -199,21 +172,10 @@ export default function Mainsite() {
                 lg:flex-row
               "
             >
-              <img
-                src="/img/frontend.png"
-                className="
-                  h-auto w-full
-                  rounded-xl
-                  lg:w-180
-                  shrink-0
-                "
-              />
-
               <div
                 className="
                   min-w-0
                   mt-8 lg:mt-0
-                  ml-0 lg:ml-10
                 "
               >
                 <h1 className="text-3xl font-bold sm:text-4xl">Frontend</h1>
@@ -259,10 +221,6 @@ export default function Mainsite() {
 
                   <Tech image="/img/css.png" name="CSS" role="" />
                 </div>
-
-                <p className="mt-8 text-sm text-[#858281] sm:text-base">
-                  Gold colour = Specializing in it...
-                </p>
               </div>
             </div>
 
@@ -279,16 +237,11 @@ export default function Mainsite() {
 
             <div
               className="
-                mt-10 flex min-w-0
+                flex min-w-0
                 flex-col
-                gap-8
-                lg:flex-row lg:gap-10
+                lg:flex-row
               "
             >
-              <img
-                src="/img/backend.png"
-                className="h-auto w-full rounded-xl lg:w-180 shrink-0"
-              />
               <div className="min-w-0">
                 <h1 className="text-3xl font-bold sm:text-4xl">
                   Backend + Database
@@ -296,7 +249,7 @@ export default function Mainsite() {
 
                 <p
                   className="
-                    mt-5 max-w-2xl
+                    mt-5
                     text-base sm:text-lg lg:text-xl
                     leading-relaxed
                     text-[#9f9fa8]
@@ -334,10 +287,6 @@ export default function Mainsite() {
 
                   <Tech image="/img/mysql.png" name="Mysql" role="" />
                 </div>
-
-                <p className="mt-8 text-sm text-[#858281] sm:text-base">
-                  Gold colour = Specializing in it...
-                </p>
               </div>
             </div>
           </Reveal>
@@ -360,18 +309,17 @@ export default function Mainsite() {
             <div
               className="
                 flex
+                w-full
                 flex-col
                 gap-10
                 lg:flex-row lg:gap-20
-                lg:justify-center
               "
             >
-              <div className="mt-0 min-w-0 lg:mt-20">
+              <div className="mt-0 w-full lg:mt-20">
                 <h1 className="mb-5 text-3xl">Who am i?</h1>
 
                 <p
                   className="
-                    max-w-4xl
                     text-base sm:text-lg lg:text-xl
                     leading-relaxed
                     text-[#9f9fa8]
@@ -390,8 +338,7 @@ export default function Mainsite() {
 
                 <p
                   className="
-                    max-w-4xl
-                    text-base sm:text-lg lg:text-xl
+                    text-base sm:text-lg lg:text-xl mt-4 lg:mt-8
                     leading-relaxed
                     text-[#9f9fa8]
                   "
@@ -411,7 +358,7 @@ export default function Mainsite() {
                   className="
                     mt-10
                     grid grid-cols-2
-                    gap-6
+                    gap-6 justify-center
                     xl:flex xl:gap-5
                     lg:mt-12
                   "
@@ -424,7 +371,7 @@ export default function Mainsite() {
                         BASED IN
                       </h2>
 
-                      <li>Norway</li>
+                      <li>Trondheim, Norway</li>
                     </div>
                   </div>
 
@@ -463,8 +410,7 @@ export default function Mainsite() {
 
                       <li>Data and coding</li>
                       <li>Gym and weightlifting</li>
-                      <li>Football</li>
-                      <li>Chilling</li>
+                      <li>Football and other sports</li>
                     </div>
                   </div>
                 </ul>
@@ -473,11 +419,11 @@ export default function Mainsite() {
                   commandFor="contact-dialog"
                   command="show-modal"
                   className="
-                    group mt-12 lg:mt-6
+                    group mt-12 lg:mt-10
                     flex h-14 w-55
                     cursor-pointer
                     items-center justify-center
-                    rounded-xl mx-auto lg:mx-0
+                    rounded-xl mx-auto
                     px-6
                     bg-[radial-gradient(50.42%_92.5%_at_50.42%_7.5%,#FFDFA7_0%,#E8BD70_100%)]
                   "
@@ -501,41 +447,6 @@ export default function Mainsite() {
                     "
                   />
                 </button>
-              </div>
-
-              <div
-                className="
-                  relative
-                  flex shrink-0
-                  items-center justify-center
-                "
-              >
-                <div
-                  className="
-                    absolute z-0
-                    size-[90%]
-                    rounded-full
-                    bg-[#E8BD70]/20
-                    blur-3xl
-                  "
-                />
-
-                <img
-                  src="/img/fjes - keeg.png"
-                  className="
-                    relative z-10
-                    aspect-square
-                    sm:w-[50vw] lg:w-[25vw]
-                    max-w-120
-                    shrink-0
-                    rounded-full
-                    border-2 border-[#E8BD70]/50
-                    bg-[#202020]
-                    object-cover
-                    object-[50%_35%]
-                    lg:mt-10
-                  "
-                />
               </div>
             </div>
           </Reveal>
@@ -604,7 +515,7 @@ function Reveal({ children }: { children: React.ReactNode }) {
       className={`
         relative z-20
         w-full min-w-0
-        transition-[opacity,transform]
+        transition-all
         duration-600 ease-[ease]
         ${active ? "translate-y-0 opacity-100" : "translate-y-[50px] opacity-0"}
       `}
