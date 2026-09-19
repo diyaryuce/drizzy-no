@@ -10,7 +10,16 @@ const PORT = process.env.PORT || 3000;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://yucecode.no",
+      "https://www.yucecode.no",
+    ],
+  }),
+);
+
 app.use(express.json());
 
 app.post("/api/contact", async (req, res) => {
